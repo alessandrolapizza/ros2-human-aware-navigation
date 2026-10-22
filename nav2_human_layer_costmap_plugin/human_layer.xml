@@ -1,0 +1,5 @@
+<library path="nav2_human_layer_costmap_plugin_core">
+  <class type="nav2_human_layer_costmap_plugin::HumanLayer" base_class_type="nav2_costmap_2d::Layer">
+    <description>Human layer costmap plugin</description>
+  </class>
+</library>

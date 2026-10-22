@@ -1,0 +1,3 @@
+string uuid
+geometry_msgs/Point position
+builtin_interfaces/Time stamp

@@ -1,0 +1,65 @@
+# Configuration
+deflogin on
+autodetach off
+
+caption always
+
+bindkey ^w screen
+bindkey ^p prev
+bindkey ^n next
+bindkey ^x quit
+bind q quit
+bindkey ^l windowlist
+bindkey ^e copy
+
+# Pre-defined tabs
+
+screen 0
+title "simulation with moving humans"
+#stuff "ros2 launch air_bringup turtle.launch.py world:=office_2\015"
+stuff "env LD_PRELOAD=/lib/x86_64-linux-gnu/libpython3.10.so.1.0  ros2 launch air_bringup turtle.launch.py world:=office_2 nav2_params_file:=$HOME/TDDE05/ros2_ws/src/labs/nav2_human_layer_costmap_plugin/config/nav2.yaml\015"
+
+screen 1
+title "rviz"
+stuff "rviz2 -d ~/TDDE05/ros2_ws/src/labs/air_lab_common/rviz/config_file.rviz\015"
+
+screen 2
+title "rqt"
+stuff "rqt"
+
+screen 3
+title "Dock"
+stuff "ros2 action send_goal /dock irobot_create_msgs/action/Dock {}"
+
+screen 4
+title "Undock"
+stuff "ros2 action send_goal /undock irobot_create_msgs/action/Undock {}"
+
+#screen 5
+#title "Move to location"
+#stuff "ros2 action send_goal /navigate_to_position irobot_create_msgs/action/NavigateToPosition \"{achieve_goal_heading: true,goal_pose:{pose:{position:{x: 3, y: 4,z: 0.0}, orientation:{x: 0.0,y: 0.0, z: 0.0, w: 1.0}}}}\""
+
+screen 5
+title "Git"
+stuff "cd ~/TDDE05/ros2_ws/src/labs\015"
+
+screen 6
+title "human_aware_navigation_node"
+stuff "ros2 run human_aware_navigation human_aware_navigation\015"
+
+#screen 6
+#title "Database"
+#stuff "ros2 run ros_kdb kdb_server --ros-args -p db_port:=10114"
+
+#screen 7
+#title "Delete database (stop databse first)"
+#stuff "rm -rf $HOME/.ros_kdb/stores/"
+
+#screen 9
+#title "Fill database"
+#stuff "ros2 service call /kdb_server/insert_triples  ros_kdb_interfaces/srv/InsertTriples \"\ngraphname: 'semanticobject'\nformat: 'ttl'\ncontent: '`ros2 run air_simple_sim generate_rdf office_1`'\""
+
+#screen 8
+#title "nav2 config reload"
+#stuff "env LD_PRELOAD=/lib/x86_64-linux-gnu/libpython3.10.so.1.0  ros2 launch air_bringup turtle.launch.py nav2_params_file:=`ros2 pkg prefix air_bringup`/share/air_bringup/config/nav2_test_py_controller.yaml"
+
